@@ -7,7 +7,7 @@ import router from "./routes/users/userRoutes";
 require("dotenv").config();
 
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,5 +37,5 @@ app.get("/", (req, res) => {
 app.use("/api1/v1/users", router);
 
 app.listen(3000, () => {
-  console.log("Server is running on port http://localhost:3000");
+  console.log("Server is running on port http://localhost:"+PORT);
 });
